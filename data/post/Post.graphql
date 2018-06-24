@@ -1,0 +1,21 @@
+scalar Date
+
+type Post {
+  _id: String!
+  type: String!
+  title: String!
+  createdAt: Date
+  trustCount: Int
+  description: String
+}
+
+input PostInput {
+  type: String!
+  title: String!
+  description: String
+}
+
+input PostInputTrust {
+  _id: String!
+  type: String!
+}
