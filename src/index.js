@@ -4,9 +4,9 @@ import cors from 'cors';
 import express from 'express';
 import bodyParser from 'body-parser';
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express';
-import db from '../data/mongo';
-import schema from '../data/schema';
-import { SERVER_INFO_LOG } from './constants';
+import db from './data/mongo';
+import schema from './data/schema';
+import { SERVER_INFO_LOG, SERVER_READABLE_INFO } from './constants';
 
 const app = express();
 
@@ -19,6 +19,7 @@ app.use((req, res, next) => {
 
 app.use('/graphql', cors(), bodyParser.json(), graphqlExpress({ schema }));
 app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
+app.use('/', (req, res) => res.send(SERVER_READABLE_INFO));
 
 db.connect((error) => {
   if (error) {

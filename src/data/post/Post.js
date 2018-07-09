@@ -1,7 +1,7 @@
 import db from '../mongo';
 import PostModel from './PostModel';
 
-export const Posts = () => db.getCollection('posts');
+export const Posts = () => db.getCollection('postas');
 
 export const queryPosts = ({ limit = 15 }) => (
   new Promise((resolve, reject) => {

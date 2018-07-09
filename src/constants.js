@@ -1,4 +1,10 @@
-export const foo = 'bar';
+export const SERVER_READABLE_INFO = `
+   PORT ${process.env.PORT} \n
+   NODE_ENV ${process.env.ENV} \n
+   Server Running at ${process.env.HOST}:${process.env.PORT} \n
+   Graphql Server Running at ${process.env.HOST}:${process.env.PORT}/graphql \n
+   Graphiql Server running at ${process.env.HOST}:${process.env.PORT}/graphiql \n \n
+`;
 
 export const SERVER_INFO_LOG = `
 \x1b[32m ****** Alert BACKEND INFO ****** \n

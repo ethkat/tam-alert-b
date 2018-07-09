@@ -34,4 +34,4 @@ PostSchema.pre('save', function cb(next) {
   next();
 });
 
-export default mongoose.model('Post', PostSchema);
+export default mongoose.model('PostA', PostSchema);
